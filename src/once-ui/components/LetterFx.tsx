@@ -1,3 +1,9 @@
+
+"use client";
+
+import React, { forwardRef, useState, useRef, useCallback, useEffect, useClient } from "react";
+import classNames from "classnames"; // Certifique-se de que classNames está corretamente importado
+
 const LetterFx = forwardRef<HTMLSpanElement, LetterFxProps>(
   (
     {
