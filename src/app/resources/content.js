@@ -97,7 +97,7 @@ const about = {
         role: "Aprendiz em Engenharia de Software/Dados",
         achievements: [
           <>
-            Contribui com reparos de códigos, implementação de otimizações e redução de custo ,
+            Contribuo com reparos de códigos, implementação de otimizações e redução de custo ,
             além de implementação de novos modelos de dados.
           </>,
           <>
