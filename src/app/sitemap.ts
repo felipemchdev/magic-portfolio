@@ -8,7 +8,7 @@ export default async function sitemap() {
   }));
 
   const works = getPosts(["src", "app", "work", "projects"]).map((post) => ({
-    url: `https://github.com/felipemchdev/${post.slug}',
+    url: `https://github.com/felipemchdev/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }));
 
