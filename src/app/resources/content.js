@@ -1,5 +1,3 @@
-import { InlineCode } from "@/once-ui/components";
-
 const person = {
   firstName: "Felipe",
   lastName: "Machado",
@@ -9,12 +7,12 @@ const person = {
   role: "Desenvolvedor Back-End",
   avatar: "/images/avatar.jpg",
   location: "America/Sao_Paulo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["Português", "Inglês","Espanhol"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["Português", "Inglês", "Espanhol"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
   display: false,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to {person.firstName}&apos;s Newsletter</>, // Corrigido aqui
   description: (
     <>
       I occasionally write about design, technology, and share thoughts on the intersection of
@@ -24,8 +22,8 @@ const newsletter = {
 };
 
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
+  // Links são automaticamente exibidos.
+  // Importe novos ícones em /once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
@@ -39,7 +37,7 @@ const social = [
   {
     name: "X",
     icon: "x",
-    link: "",
+    link: "https://x.com/felipemch_",
   },
   {
     name: "Email",
@@ -48,15 +46,16 @@ const social = [
   },
 ];
 
+
 const home = {
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portifolio pra demonstrar minhas experiências como ${person.role}`,
+  title: `${person.name}&apos;s Portfolio`, // Corrigido aqui
+  description: `Portfólio pra demonstrar minhas experiências como ${person.role}`,
   headline: <>Felipe, Desenvolvedor Back-End </>,
   subline: (
     <>
-      Me chamo {person.firstName}, atualmente atuando e me desenvolvendo como dev <InlineCode>Back-End</InlineCode>, e aqui posto projetos pessoais. 
-      <br /> Atualmente estou fazendo projetos com foco em API's.
+      Me chamo {person.firstName}, atualmente atuando e me desenvolvendo como dev <code>Back-End</code>, e aqui posto projetos pessoais. 
+      <br /> Atualmente estou fazendo projetos com foco em API&apos;s. {/* Corrigido aqui */}
     </>
   ),
 };
@@ -109,9 +108,7 @@ const about = {
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-          
-          },
+          {},
         ],
       },
     ],
@@ -133,53 +130,43 @@ const about = {
     skills: [
       {
         title: "- Python",
-        description: <>Habilidade de desenvolvimento de aplicativos e API's.</>,
-        // optional: leave the array empty if you don't want to display images
+        description: <>Habilidade de desenvolvimento de aplicativos e API&apos;s.</>, // Corrigido aqui
       },
       {
         title: "- MySQL",
         description: <>Bancos de dados relacionais.</>,
-        // optional: leave the array empty if you don't want to display images
       },
       {
         title: "- Flutter",
         description: <>Construção de Aplicativos Mobile.</>,
-        // optional: leave the array empty if you don't want to display images
       },
       {
         title: "- Express API",
         description: <>Construção de APIs com Express.</>,
-        // optional: leave the array empty if you don't want to display images
       },
       {
         title: "- Node.js",
         description: <>Construção de APIs com Node.js.</>,
-        // optional: leave the array empty if you don't want to display images
       },
       {
         title: "- React",
         description: <>Construção de Aplicativos Web com React.</>,
-        // optional: leave the array empty if you don't want to display images
       },
       {
         title: "- TypeScript",
         description: <>Construção de Aplicativos Web com TypeScript.</>,
-        // optional: leave the array empty if you don't want to display images
       },
       {
         title: "- Next.js",
         description: <>Construção de Aplicativos Web com React.</>,
-        // optional: leave the array empty if you don't want to display images
       },
       {
         title: "- Git CI/CD",
         description: <>Versionamento CI/CD.</>,
-        // optional: leave the array empty if you don't want to display images
       },
       {
         title: "- Agile Methods",
         description: <>Metodologia Scrum, Kanban.</>,
-        // optional: leave the array empty if you don't want to display images
       },
     ],
   },
@@ -189,9 +176,6 @@ const work = {
   label: "Work",
   title: "My projects",
   description: `Projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
 };
 
 export { person, social, home, about, work };
-

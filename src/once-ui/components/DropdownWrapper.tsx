@@ -136,7 +136,7 @@ const DropdownWrapper = forwardRef<HTMLDivElement, DropdownWrapperProps>(
         document.removeEventListener("mousedown", handleClickOutside);
         wrapperRef.current?.removeEventListener("focusout", handleFocusOut);
       };
-    }, []);
+    }, [handleClickOutside, handleFocusOut]); // Adicionar as dependências corretamente
 
     return (
       <Flex
@@ -176,7 +176,6 @@ const DropdownWrapper = forwardRef<HTMLDivElement, DropdownWrapperProps>(
             style={{
               position: strategy,
               top: y ?? 0,
-              offset: 4,
               left: x ?? 0,
             }}
             role="listbox"

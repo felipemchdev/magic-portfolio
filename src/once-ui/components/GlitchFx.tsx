@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, forwardRef } from "react";
+import React, { useEffect, useState, forwardRef, useRef } from "react";
 import styles from "./GlitchFx.module.scss";
 import { Flex } from "./Flex";
 import classNames from "classnames";
@@ -26,6 +26,7 @@ const GlitchFx = forwardRef<HTMLDivElement, GlitchFxProps>(
     ref,
   ) => {
     const [isGlitching, setIsGlitching] = useState(continuous || trigger === "instant");
+    const glitchIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
     useEffect(() => {
       if (continuous || trigger === "instant") {
@@ -54,8 +55,12 @@ const GlitchFx = forwardRef<HTMLDivElement, GlitchFxProps>(
 
     useEffect(() => {
       if (trigger === "custom") {
-        const glitchInterval = setInterval(triggerGlitch, interval);
-        return () => clearInterval(glitchInterval);
+        glitchIntervalRef.current = setInterval(triggerGlitch, interval);
+        return () => {
+          if (glitchIntervalRef.current) {
+            clearInterval(glitchIntervalRef.current);
+          }
+        };
       }
     }, [trigger, interval]);
 
