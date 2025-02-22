@@ -6,13 +6,13 @@ import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
-import { Metadata } from "next";
 
 interface WorkParams {
-  params: Promise<{ slug: string }>;
+  params: {
+    slug: string;
+  };
 }
 
-// Ajustando o generateStaticParams para retornar o tipo correto
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
   return posts.map((post) => ({
@@ -20,16 +20,14 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   }));
 }
 
-// Ajustando o tipo do generateMetadata
-export async function generateMetadata({ params }: WorkParams): Promise<Metadata | undefined> {
-  const { slug } = await params;
-  const post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slug);
+export function generateMetadata({ params: { slug } }: WorkParams) {
+  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slug);
 
   if (!post) {
     return;
   }
 
-  const {
+  let {
     title,
     publishedAt: publishedTime,
     summary: description,
@@ -37,22 +35,24 @@ export async function generateMetadata({ params }: WorkParams): Promise<Metadata
     image,
     team,
   } = post.metadata;
-
-  const ogImage = image
-    ? `https://${baseURL}${image}`
-    : `https://${baseURL}/og?title=${title}`;
+  let ogImage = image ? `https://${baseURL}${image}` : `https://${baseURL}/og?title=${title}`;
 
   return {
     title,
     description,
     images,
+    team,
     openGraph: {
       title,
       description,
       type: "article",
       publishedTime,
       url: `https://github.com/felipemchdev/${post.slug}`,
-      images: [{ url: ogImage }],
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
@@ -63,16 +63,17 @@ export async function generateMetadata({ params }: WorkParams): Promise<Metadata
   };
 }
 
-// Ajustando o componente principal para lidar com a Promise do params
-export default async function Project({ params }: WorkParams) {
-  const { slug } = await params;
-  const post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slug);
+export default function Project({ params }: WorkParams) {
+  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
   }
 
-  const avatars = post.metadata.team?.map((person) => ({ src: person.avatar })) || [];
+  const avatars =
+    post.metadata.team?.map((person) => ({
+      src: person.avatar,
+    })) || [];
 
   return (
     <Column as="section" maxWidth="m" horizontal="center" gap="l">
