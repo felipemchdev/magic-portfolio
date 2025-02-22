@@ -1,19 +1,19 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Felipe",
+  lastName: "Machado",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Desenvolvedor Back-End",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "America/Sao_Paulo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Português", "Inglês","Espanhol"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
@@ -29,12 +29,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/felipemchdev",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/felipemchdev/",
   },
   {
     name: "X",
@@ -44,27 +44,27 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:felipe.mch.alt@gmail.com",
   },
 ];
 
 const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  description: `Portifolio pra demonstrar minhas experiências como ${person.role}`,
+  headline: <>Felipe, Desenvolvedor Back-End </>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      Me chamo {person.firstName}, atualmente atuando e me desenvolvendo como dev <InlineCode>Back-End</InlineCode>, e aqui posto projetos pessoais. 
+      <br /> Atualmente estou fazendo projetos com foco em API's.
     </>
   ),
 };
 
 const about = {
   label: "About",
-  title: "About me",
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  title: "Sobre mim",
+  description: `Sou ${person.name}, ${person.role} nascido no ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -74,212 +74,124 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.com/felipe-machado-agenda",
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Sobre Mim",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Sou uma pessoa apaixonada pela tecnologia, com essa paixão nascida em 2017, devido a meu pai me dar 
+        um Arduino UNO pra desenvolver projetos como robôs e barcos de controle remoto.
+        Desde então, me apaixonei pela programação e tornei isso como um objetivo de vida, ser um progamador.
       </>
     ),
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Experiência Profissional",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Serasa Experian",
+        timeframe: "2024 - Atualmente",
+        role: "Aprendiz em Engenharia de Software/Dados",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Contribui com reparos de códigos, implementação de otimizações e redução de custo ,
+            além de implementação de novos modelos de dados.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Uso de Python para o desenvolvimento -
+            Cultura DevOps -
+            Git CI/CD -
+            AWS.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
+          
           },
         ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
       },
     ],
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Educação",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Centro Universitário Central Paulista",
+        timeframe: "2024 - Atualmente",
+        description: <>Bacharelado em Engenharia da Computação.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Habilidades Técnicas",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "- Python",
+        description: <>Habilidade de desenvolvimento de aplicativos e API's.</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "- MySQL",
+        description: <>Bancos de dados relacionais.</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+      },
+      {
+        title: "- Flutter",
+        description: <>Construção de Aplicativos Mobile.</>,
+        // optional: leave the array empty if you don't want to display images
+      },
+      {
+        title: "- Express API",
+        description: <>Construção de APIs com Express.</>,
+        // optional: leave the array empty if you don't want to display images
+      },
+      {
+        title: "- Node.js",
+        description: <>Construção de APIs com Node.js.</>,
+        // optional: leave the array empty if you don't want to display images
+      },
+      {
+        title: "- React",
+        description: <>Construção de Aplicativos Web com React.</>,
+        // optional: leave the array empty if you don't want to display images
+      },
+      {
+        title: "- TypeScript",
+        description: <>Construção de Aplicativos Web com TypeScript.</>,
+        // optional: leave the array empty if you don't want to display images
+      },
+      {
+        title: "- Next.js",
+        description: <>Construção de Aplicativos Web com React.</>,
+        // optional: leave the array empty if you don't want to display images
+      },
+      {
+        title: "- Git CI/CD",
+        description: <>Versionamento CI/CD.</>,
+        // optional: leave the array empty if you don't want to display images
+      },
+      {
+        title: "- Agile Methods",
+        description: <>Metodologia Scrum, Kanban.</>,
+        // optional: leave the array empty if you don't want to display images
       },
     ],
   },
 };
 
-const blog = {
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
-};
-
 const work = {
   label: "Work",
   title: "My projects",
-  description: `Design and dev projects by ${person.name}`,
+  description: `Projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
 
-const gallery = {
-  label: "Gallery",
-  title: "My photo gallery",
-  description: `A photo collection by ${person.name}`,
-  // Images from https://pexels.com
-  images: [
-    {
-      src: "/images/gallery/img-01.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-02.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-03.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-04.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-05.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-07.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-08.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-09.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-10.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-11.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-12.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-13.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-14.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-  ],
-};
+export { person, social, home, about, work };
 
-export { person, social, newsletter, home, about, blog, work, gallery };

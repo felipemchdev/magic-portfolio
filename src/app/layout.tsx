@@ -19,10 +19,10 @@ export async function generateMetadata() {
     description: home.description,
     openGraph: {
       title: `${person.firstName}'s Portfolio`,
-      description: "Portfolio website showcasing my work.",
+      description: "Portfolio com meus projetos pessoais pra estudo.",
       url: baseURL,
       siteName: `${person.firstName}'s Portfolio`,
-      locale: "en_US",
+      locale: "pt_BR",
       type: "website",
     },
     robots: {
@@ -72,7 +72,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   return (
     <Flex
       as="html"
-      lang="en"
+      lang="pt_BR"
       background="page"
       data-neutral={style.neutral}
       data-brand={style.brand}

@@ -154,7 +154,7 @@ export default function About() {
                 vertical="center"
               >
                 <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-                <Flex paddingX="8">Schedule a call</Flex>
+                <Flex paddingX="8">Marque uma reunião comigo!</Flex>
                 <IconButton
                   href={about.calendar.link}
                   data-border="rounded"
@@ -224,7 +224,7 @@ export default function About() {
                       <Text variant="heading-default-xs" onBackground="neutral-weak">
                         {experience.timeframe}
                       </Text>
-                    </Flex>
+                    </Flex> 
                     <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
                       {experience.role}
                     </Text>
@@ -250,18 +250,7 @@ export default function About() {
                             minWidth={image.width}
                             //@ts-ignore
                             height={image.height}
-                          >
-                            <SmartImage
-                              enlarge
-                              radius="m"
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
+                          />
                         ))}
                       </Flex>
                     )}
@@ -281,6 +270,9 @@ export default function About() {
                   <Column key={`${institution.name}-${index}`} fillWidth gap="4">
                     <Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
+                    </Text>
+                    <Text variant="heading-default-xs" onBackground="neutral-weak">
+                      {institution.timeframe}
                     </Text>
                     <Text variant="heading-default-xs" onBackground="neutral-weak">
                       {institution.description}

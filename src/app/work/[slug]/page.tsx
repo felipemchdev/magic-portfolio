@@ -47,7 +47,7 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
       description,
       type: "article",
       publishedTime,
-      url: `https://${baseURL}/work/${post.slug}`,
+      url: `https://github.com/felipemchdev/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -91,7 +91,7 @@ export default function Project({ params }: WorkParams) {
             image: post.metadata.image
               ? `https://${baseURL}${post.metadata.image}`
               : `https://${baseURL}/og?title=${post.metadata.title}`,
-            url: `https://${baseURL}/work/${post.slug}`,
+            url: `https://github.com/felipemchdev/${post.slug}`,
             author: {
               "@type": "Person",
               name: person.name,
